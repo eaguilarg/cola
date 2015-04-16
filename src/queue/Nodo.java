@@ -14,7 +14,6 @@ public class Nodo <T> {
          siguiente=null;
     }
    public Nodo(){
-       
    }
    public Nodo(T elem,int prioridad){
        this.elemento=elemento;
@@ -26,11 +25,9 @@ public class Nodo <T> {
    public Nodo<T> getSiguiente(){
        return siguiente;
    }
-   
    public void setSiguiente(Nodo<T> siguiente){
        this.siguiente=siguiente;
    }
-   
    
  //toString
    public String toString(){
@@ -45,7 +42,5 @@ public class Nodo <T> {
     
     public void setElemento(T elemento){
             this.elemento=elemento;
-         }
-   
-    
-}
+      }
+   }

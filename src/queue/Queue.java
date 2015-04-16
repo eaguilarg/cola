@@ -9,8 +9,7 @@ public class Queue <T> extends miLista<T>{
  //atributos
    private Nodo<T> front;
    private int tamanoQueue;
-      
-   //constructor
+ //constructor
    public Queue(){
        front=new Nodo();
        tamanoQueue=0;
@@ -24,12 +23,8 @@ public class Queue <T> extends miLista<T>{
        if(aux.getSiguiente()==null)
            peek=aux.getElemento();
        return peek;
-         
-   }
-   
- 
-   
-    public void enQueue(T elem,int prio) {
+    }
+   public void enQueue(T elem,int prio) {
         Nodo<T> recorredor=cabeza;
         Nodo<T> nuevo=new Nodo(elem,prio);
         Nodo<T> aux=null;
@@ -43,11 +38,9 @@ public class Queue <T> extends miLista<T>{
         cont++;
         }
 
-   
    public T deQueue(){
        Nodo<T>aux=cabeza.getSiguiente();
        T a=aux.getElemento();
-       
        aux=aux.getSiguiente();
        cabeza.setSiguiente(aux);
        return a;
@@ -61,7 +54,5 @@ public class Queue <T> extends miLista<T>{
            resp=false;
        return resp;
    }
-     
-   
-}
+  }
 

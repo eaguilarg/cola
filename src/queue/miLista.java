@@ -12,14 +12,12 @@ public class miLista<T> {
         cabeza=new Nodo();
         contador=0;
     }
-    
-    
+   
     public void insertaInicio(Nodo <T> elem){
       Nodo<T> temporal=cabeza.getSiguiente();
       cabeza.setSiguiente(elem);
       elem.setSiguiente(temporal);
-                       
-    }
+     }
     
     //iterativo
     public void insertaFinal(T elem){
@@ -31,7 +29,6 @@ public class miLista<T> {
          aux.setSiguiente(nuevo);
          contador++;               
     }
-    
     //recursivo
     public void insertaFinalR(T elem){
         insertaFinal(cabeza,elem);
@@ -44,8 +41,7 @@ public class miLista<T> {
         else
             insertaFinal(actual.getSiguiente(),elem);
     }
-    
-    
+   
     public  String borrar(Nodo<T> elem) throws Unchecked {
         Nodo<T> aux = cabeza;
         while(aux.getSiguiente()!=elem ){
@@ -57,21 +53,10 @@ public class miLista<T> {
                       
         return elem.toString();
       }
-    
-    //borrar clase
-  /*  public Nodo<T> borra(T elem){
-        Nodo<T> actual=cabeza;
-        Nodo<T> pasado= cabeza;
-    }
-    /*   
-    * 
-    */
-    
   public void imprimeLista(){
       for(Nodo<T> i=cabeza;i.getSiguiente()!=null;i=i.getSiguiente())
           System.out.println(i);
   }  
-  
   //recursivo
   public void imprimeLista(Nodo<T> actual){
       if(actual!=null){
@@ -93,10 +78,7 @@ public class miLista<T> {
       
       nuevo.setSiguiente(aux.getSiguiente());
       aux.setSiguiente(nuevo);
-      
-      
   }
-    
   
   //invertir lista(iterativo y recursivo)
   public void invertirLista(){
@@ -106,16 +88,13 @@ public class miLista<T> {
           pila.push(aux.getElemento());
           aux=aux.getSiguiente();
       }
-      
       aux=cabeza.getSiguiente();
       while(!pila.isEmpty()){
           aux.setElemento(pila.pop());
           aux=aux.getSiguiente();
       }
-     
-  }
-  
- //recursivo
+    }
+   //recursivo
   public Nodo<T> invertirListaR(Nodo<T> actual){
       if(actual!=null){
           
@@ -129,19 +108,7 @@ public class miLista<T> {
       return actual;
   }
   
-  //elimina elemetos repetidos
- /*public void borraTodos(Nodo<T> elem){
-     boolean aux=buscar(elem);
-     if(aux==true);
-        aux=buscar(elem);
-     while(aux==true){
-        borrar(elem);
-        aux=buscar(elem);
-      }
- }
- */
-  
- //borrar todos clase
+  //borrar todos clase
  public void borrarRep(){
      Nodo<T> actual=cabeza.getSiguiente();
      T elem=actual.getElemento();
@@ -161,10 +128,7 @@ public class miLista<T> {
              aux=aux.getSiguiente();
          }
      }
-     
-     
-     
- }
+    }
  
  //busca elemento
  public boolean buscar(Nodo<T> elem){
@@ -179,7 +143,6 @@ public class miLista<T> {
  
  public static void main(String[] args){
      miLista <Integer> lista=new miLista();
-     
      lista.cabeza();
      lista.insertaFinal(3);
      lista.insertaFinal(2);
@@ -187,10 +150,5 @@ public class miLista<T> {
      
      lista.imprimeLista(cabeza.getSiguiente());
      lista.invertirListaR(int.cabeza.getSiguiente());
-     
-     
+     }
  }
-    
-    
-    
-}
